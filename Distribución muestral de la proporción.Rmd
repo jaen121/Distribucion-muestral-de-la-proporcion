@@ -1,0 +1,269 @@
+---
+title: "Distribución Muestral de la Proporción"
+author: "Jairo Enrique Alba Talero"
+date: "7/3/2022"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+
+## Distribución muestral de la proporción.
+
+Es el conjunto de las propórciones de todas las muestras posibles de determinado tamaño n que es posible obtener de una determinada población de tamaño N.
+
+
+## Ejemplo
+
+
+Suponga que se tiene una población de N = 6 artículos, de los cuales 3 están defectuosos y 3 no. Si se utiliza 1 para representar la característica de estar defectuoso y 0 para representar la característica de no estarlo. Los datos se presentan en la siguiente tabla:
+
+##
+
+| Artículo           | Característica (x)     | 
+|-------------------|-------------|
+|a             | 1         |         
+| b             | 1           | 
+|c              | 1          | 
+| d           | 0           | 
+| e           | 0          | 
+|f| 0| 
+|Total|3 | |
+
+## Media poblacional.
+
+Por lo tanto:
+
++ la proporción poblacional es:
+
+<center>
+$P = \frac{\sum x}{N} = \frac{3}{6} = 0.5$
+<center>
+
+
+
+
+
+## Desviación estándar poblacional.
+
+| Familia           | Hijos       | $x-P$       | $(x-P)^{2}$ |
+|-------------------|-------------|---------------|--------------|
+|a             | 1          | (1-0,5)=0,5      | 0,25|
+| b             | 1           | (1-0,5)=0,5       |  0,25|
+|c              | 1           | (1-0,5)=0,5       |  0,25 |
+| d           | 0         | (0-0,5)=-0,5        |  0,25|
+| e           | 0          | (0-0,5)=-0,5      |  0,25|
+|f|0|(0-0,5)=-0,5| 0,25|
+|Total|3|0|1,5|
+
+
+
+##  la desviación estandar es:
+
++ la desviación estandar es:
+
+<center>
+$\sigma = \sqrt{\frac{\sum(x-P)^2}{N}} = \sqrt{\frac{1.5}{6}} = \sqrt{0.25} = 0,5$
+<center>
+
+La cual puede calcularse como:
+
+<center>
+$\sigma = \sqrt{pq} = \sqrt{0.5*0.5} = \sqrt{0.25} = 0,5$
+<center>
+
+
+## Número de muestras de tamaño n=2.
+
+Para determinar el número de muestras posibles, en un apoblación de tamaño N, hay dos formas:
+
++ **Muestreo con reemplazo.**
+
+Número de muestras diferentes $= N^{n}$
+
+
++ **Muestreo sin reemplazo.**
+
+Número de muestras diferentes $= \binom{N}{n} = \frac{N!}{n!(N-n)!}.$
+
+
+Para el ejemplo 
+
+Número de muestras diferentes $= \binom{6}{2} = \frac{6!}{2!(6-2)!} = 15.$
+
+
+## Posibles muestras
+
+| Muestra| Característica (X) | Proporción $\overline{P}$  | 
+|-------------------|-------------|---------------|
+|a,b    | 1,1  | $\frac{2}{2} = 1$|
+| a,c   | 1,1  | $\frac{2}{2} = 1$ | 
+|a,d            | 1,0  | $\frac{1}{2} = 0,5$      | 
+| a,e           |1,0 | $\frac{1}{2} = 0,5$      | 
+| a,f             |1,0 | $\frac{1}{2} = 0,5$      | 
+|b,c           | 1,1  | $\frac{2}{2} = 1$       | 
+|b,d           | 1,0  | $\frac{1}{2} = 0,5$       |
+
+##
+| Muestra| Característica (X) | Proporción $\overline{P}$  | 
+|-------------------|-------------|---------------|
+|b,e           | 1,0  | $\frac{1}{2} = 0,5$       |
+|b,f           | 1,0  | $\frac{1}{2} = 0,5$       |
+|c,d           | 1,0  | $\frac{1}{2} = 0,5$       |
+|c,e           | 1,0  | $\frac{1}{2} = 0,5$       |
+|c,f           | 1,0  | $\frac{1}{2} = 0,5$       |
+|d,e           | 0,0  | $\frac{0}{2} = 0$       |
+|d,f           | 0,0  | $\frac{0}{2} = 0$       |
+|e,f           | 0,0  | $\frac{0}{2} = 0$       |
+|Total          |   | 7,5$\frac{0}{2} = 0$       |
+
+##
+| Muestra| Característica (X) | Proporción $\overline{P}$  | 
+|-------------------|-------------|---------------|
+|Total          |   | 7,5       |
+
+
+
+## Con respecto a la proporción podemos concluir 
+
+Podemos concluir que la proporción de la distribución muestral de las proporción es igual a la proporción de la población o dicho en otras palabras el valor esperado de la proporción es igual a la proporción de la población. Es decir: 
+
+<center>
+$\mu_{\overline{P}} = \frac{\sum \overline{P}}{N} = \frac{7.5}{15} = 0.5$
+</center>
+
+es decir
+
+
+<center>
+$\mu_{\overline{P}} = E(P) = P_{\overline{P}} = P$
+</center>
+
+## Para calcular la desviación estándar.
+
+
+ 
+| Proporciones muestrales| Frecuencias | $\overline{P}-P_{\overline{P}}$  |$( \overline{P}-P_{\overline{P}})^{2}$|$f_{i}( \overline{P}-P_{\overline{P}})^{2}$|     
+|-------------------|-------------|---------------|--------------|-------------|
+| 0        | 3 | 0-0,5=-0,5     | 0,25|    0,75  |
+| 0,5        | 9 | 0,5-0,5=0     | 0|    0 |
+| 1       | 3 | 1-0,5=0,5     | 0,25|    0,75  |
+|Total|15 | 0 |  | 1,5|
+
+
+Luego la desviación estandar de todas las proporciones o sea la desviación estándar de la distribución muestral de las proporción es:
+
+
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{\sum (\overline{P}- P_{\overline{P}})^{2}}{N}} = \sqrt{\frac{1.5}{15}} = 0.3162.$
+<center>
+
+Aquí N es el número total de muestras(se convierte en la población)
+
+
+$\overline{P}$ esta indicando que hace referencia a la desviación estándar de la distribución muestral de la proporción.
+
+
+
+## Con respecto la desviación estándar podemos concluir.
+
+
+A este valor se le conoce como **error estándar de la proporción**  y tiene una relación con la desviación estándar de la población (P) que se expresa mediante la siguiente ecuación:
+
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}$
+</center>
+
+Veamos que se cumple
+
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}} = \sqrt{\frac{0.5*0.5}{{2}}}\sqrt{\frac{6-2}{6-1}} = 0,3162$
+</center>
+
+Que es el mismo valor que se encontro calculando la desviación estándar de la distribución muestral de la proporción.
+
+
+
+## Tres conclusiones importantes sobre la distribución muestral de la proporción.
+
++ $E(P) = P_{\overline{P}} = P.$
+
++ $\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}$
+
++ **Teorema Central del límite**. Si X es una variable aleatoria para la que se conoce su proporción $P$ y su varianza $\sigma^{2}$ la distribución muestral de la proporción tiende a ser normal con media $\mu_{\overline{P}}=P_{\overline{P}}$ y desviación estándar 
+<center>
+$\sigma_{\overline{P}} = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}} = \sqrt{\frac{0.5*0.5}{{2}}}\sqrt{\frac{6-2}{6-1}} = 0,3162$
+</center>
+
+## Es decir
+
+
+Es decir 
+
+<center>
+$z = \sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}$
+</center>
+
+en otras palabras para estandarizar utilizaremos
+
+<center>
+$z = \frac{\hat{p}- p}{\sqrt{\frac{pq}{{n}}}\sqrt{\frac{N-n}{N-1}}}$
+</center>
+
+Si la población es infinita se omite el factor de corrección $\sqrt{\frac{N-n}{N-1}}$
+
+## Para calcular las probabilidades para la proporción muestral $\hat{p}$
+
++ Encuentre los valores necesarios de $n$ y $p.$
+
++ Verifique si la aproximación normal a la distribución binomial es apropiada, es decir $np > 5$ y $nq > 5.$
+
++ Escriba el evento de interés en términos de $\hat{p}$ y localice el área apropiada en la curva normal.
+
++ Convierta los valores necesarios de $\hat{p}$ en valores $z$ usando
+
+\begin{center}
+<center>
+$z = \frac{\hat{p}- p}{\sqrt{\frac{pq}{{n}}}}$
+</center>
+\end{center}
+
++ Buscar la probabilidad en las tablas correspondientes.
+
+## Ejemplo 1.
+
+Una cadena de tiendas de departamentos tiene 5000 cuentas de crédito abiertas con sus clientes. Se sabe, de acuerdo con la experiencia de varios años que la proporción de cuentas de crédito que se encuentran atrasadas en sus pagos(morosos) es de 10%, si se extrae de esta población una muestra aleatoria de 100 cuentas,
+
++  ¿Cuál es la probabilidad de que más de trece de ellas sean morosas?
+
+## Solución
+
+**Datos**
+
++ $\hat{p} =$ proporción de cuentas de crédito que se encuentran atrasadas en sus pagos.
++ $N = 5000$
++ $p = 0.10$ y $q = 1- 0.10 = 0.90$ (poblacionales)
++ $n=100$
++ $\hat{p} = \frac{13}{100} = 0.13$ y $\hat{q} = 1- \hat{q} = 1- 0.13= 0.87$
++ Como $\frac{n}{N} = \frac{100}{5000}=0.02 < 0.05$ no es necesario el factor de corrección. Además,
++ $np = 100(0.13)=13 > 5$
++ $nq = 100(0.87)= 87 > 5$
+
+## Solución
+
++  ¿Cuál es la probabilidad de que más de trece de ellas sean morosas?
+
+$P(\hat{p} \geq \frac{13}{100}) = P(\hat{p} \geq 0.13) = 1- P(\hat{p} \leq 0.13)$
+
+Por lo tanto
+
+$=1- P\left(z \leq \frac{0.13-0.10}{\sqrt{\frac{(0.10)(0.90)}{{100}}}}\right)$ 
+
+continuar...
+
+
+
